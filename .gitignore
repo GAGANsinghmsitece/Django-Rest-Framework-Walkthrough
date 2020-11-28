@@ -1,0 +1,4 @@
+# ignoring database stuff
+*.sqlite3
+migrations/
+db.sqlite3
