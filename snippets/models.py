@@ -9,7 +9,13 @@ LEXERS = [item for item in get_all_lexers() if item[1]]
 LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
 
-
+"""
+   Models are used to create database objects. This is not a django-rest specific subject
+   but a django one.
+   In case if you are looking to know more about models, following links might be helpful
+   https://docs.djangoproject.com/en/3.1/topics/db/models/
+   https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Models
+"""
 class Snippet(models.Model):
 	owner=models.ForeignKey('auth.User',related_name='snippets',on_delete=models.CASCADE)
 	highlighted=models.TextField()

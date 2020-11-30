@@ -6,7 +6,21 @@ from snippets.permissions import IsOwnerOrReadOnly
 from rest_framework.response import Response
 from rest_framework.decorators import api_view,action
 from rest_framework.reverse import reverse
-
+"""
+ViewSet classes are almost the same thing as View classes, except that they provide operations
+such as retrieve, or update, and not method handlers such as get or put.
+Here, we are replacing UserList and UserDetail view by a single UserViewSet.Similarly, we're 
+replacing SnippetList and SnippetDetail view by a single SnippetViewSet. To replace 
+SnippetHighlight view we extend SnippetViewSet to include a 'highight' method using @action 
+decorator.
+Now there are two ways to link urls with viewsets.
+1)Use django urlpatterns:- This method is recommended if you want to have custom url endpoint 
+names.
+2)Use DRF Router:- DRF provides a Router which can create url endpoint with viewsets with 
+logical naming.
+To view usage with django urlpatterns, refer to viewset_url.py
+To view usage with DRF router, refer to Rest_Router.py
+"""
 @api_view(['GET'])
 def api_root(request,format=None):
 	return Response({

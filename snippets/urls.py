@@ -1,6 +1,15 @@
 from django.urls import path,include
 from snippets import views
 from rest_framework.urlpatterns import format_suffix_patterns
+"""
+When working with generics, using URL's is identical to using class-based views in Django.
+Authentication for using the API is provided out-of-box by DRF by including 
+'rest_framework.urls'.
+DRF also provide content conversion which means our API can return data in a format 
+requested, whether it's json,HTML,XML.To do so, add format=None in views and use
+format_suffix_patterns with urlpatterns.
+
+"""
 urlpatterns = [
     path('snippets/', views.SnippetList.as_view(),name='snippet-list'),
     path('snippets/<int:pk>/', views.SnippetDetail.as_view(),name='snippet-detail'),
