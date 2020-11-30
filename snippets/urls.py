@@ -1,4 +1,4 @@
-from django.urls import path,include
+from django.urls import path,incslude
 from snippets import views
 from rest_framework.urlpatterns import format_suffix_patterns
 """
@@ -8,7 +8,7 @@ Authentication for using the API is provided out-of-box by DRF by including
 DRF also provide content conversion which means our API can return data in a format 
 requested, whether it's json,HTML,XML.To do so, add format=None in views and use
 format_suffix_patterns with urlpatterns.
-
+Now refer to viewset.py to learn about viewsets.s
 """
 urlpatterns = [
     path('snippets/', views.SnippetList.as_view(),name='snippet-list'),
