@@ -13,27 +13,28 @@ Now run the server using
 ## How to run this project with different url patterns?
 This project provides three urls which are in `urls.py`(generics with urlpatterns),`viewset_urls.py`(viewsets with urlpatterns) and `Rest_Router.py`(viewsets with DRF Router).
 1) If you wish to run project with `urls.py`, open`tutorial/urls.py` and edit:-
-    
-    urlpatterns = [
+```
+urlpatterns = [
        path('admin/', admin.site.urls),
        path('', include('snippets.urls')),
     ]
+```
 
 2) If you wish to run project with `viewset_urls.py`, open`tutorial/urls.py` and edit:-
-
-    
-    urlpatterns = [
+```
+urlpatterns = [
         path('admin/', admin.site.urls),
         path('', include('snippets.viewset_urls')),
     ]
+```
 
 3) If you wish to run project with `Rest_Router.py`, open`tutorial/urls.py` and edit:-
-
-    
+``` 
     urlpatterns = [
         path('admin/', admin.site.urls),
         path('', include('snippets.Rest_Router')),
     ]
+```
 ## How to read this project?
 You should start reading the files in this order:-
 1)  `models.py`
